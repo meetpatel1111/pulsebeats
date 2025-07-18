@@ -4,8 +4,8 @@
   "description": "Cross-platform local music player for Windows, Mac, and Linux",
   "main": "index.html",
   "scripts": {
-    "start": "python3 -m http.server 8080",
-    "dev": "python3 -m http.server 8080",
+    "start": "http-server . -p 8080 -c-1",
+    "dev": "http-server . -p 8080 -c-1",
     "build": "echo 'Build complete - static files ready'",
     "postinstall": "echo 'Dependencies installed successfully'"
   },
