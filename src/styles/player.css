@@ -1,0 +1,511 @@
+/* Advanced Music Player Styles */
+
+/* Player Controls Container */
+.player-controls-container {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-tertiary);
+  border-top: 1px solid var(--divider);
+  padding: 16px;
+  gap: 12px;
+}
+
+/* Now Playing Section */
+.now-playing-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 64px;
+}
+
+.album-art-container {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.album-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.album-art-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.album-art-container:hover .album-art-overlay {
+  opacity: 1;
+}
+
+.track-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.track-title {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+.track-artist {
+  font-size: 14px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+
+.track-album {
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Main Controls Section */
+.main-controls-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.playback-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn-control {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-control:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-control.active {
+  color: var(--accent-primary);
+}
+
+.btn-play-pause {
+  background: var(--accent-primary);
+  color: white;
+  font-size: 24px;
+  width: 56px;
+  height: 56px;
+}
+
+.btn-play-pause:hover {
+  background: var(--accent-secondary);
+  color: white;
+}
+
+/* Progress Section */
+.progress-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.time-display {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+  min-width: 40px;
+  text-align: center;
+}
+
+.progress-container {
+  flex: 1;
+  position: relative;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent-primary);
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.progress-handle {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s;
+  left: 0%;
+}
+
+.progress-bar:hover .progress-handle {
+  opacity: 1;
+}
+
+/* Speed Control */
+.speed-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.speed-slider {
+  width: 80px;
+}
+
+.speed-display {
+  min-width: 30px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Volume Controls Section */
+.volume-controls-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.volume-slider-container {
+  position: relative;
+  width: 100px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.volume-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.volume-fill {
+  height: 100%;
+  background: var(--accent-primary);
+  border-radius: 2px;
+  width: 100%;
+  transition: width 0.1s;
+}
+
+.volume-display {
+  font-size: 12px;
+  color: var(--text-secondary);
+  min-width: 35px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.additional-controls {
+  display: flex;
+  gap: 8px;
+}
+
+/* Advanced Controls Panel */
+.advanced-controls-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--divider);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 8px;
+}
+
+.advanced-controls-panel h4 {
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Equalizer */
+.equalizer-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 120px;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.eq-band {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.eq-slider {
+  writing-mode: bt-lr; /* IE */
+  -webkit-appearance: slider-vertical; /* WebKit */
+  width: 4px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+  cursor: pointer;
+}
+
+.eq-value {
+  font-size: 10px;
+  color: var(--text-secondary);
+  min-width: 35px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.eq-freq {
+  font-size: 10px;
+  color: var(--text-secondary);
+  text-align: center;
+  writing-mode: horizontal-tb;
+}
+
+.equalizer-presets {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.equalizer-presets select {
+  flex: 1;
+  padding: 6px 8px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--divider);
+  color: var(--text-primary);
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* Effects Section */
+.effects-section {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--divider);
+}
+
+.effect-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.effect-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.effect-control label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  min-width: 80px;
+}
+
+.effect-slider {
+  flex: 1;
+  height: 4px;
+}
+
+.effect-value {
+  font-size: 12px;
+  color: var(--text-secondary);
+  min-width: 35px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.effect-toggle {
+  width: 16px;
+  height: 16px;
+}
+
+/* Crossfade Section */
+.crossfade-section {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--divider);
+}
+
+.crossfade-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-group label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  min-width: 120px;
+}
+
+.crossfade-slider {
+  flex: 1;
+  height: 4px;
+}
+
+.crossfade-value {
+  font-size: 12px;
+  color: var(--text-secondary);
+  min-width: 35px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.gapless-toggle {
+  width: 16px;
+  height: 16px;
+}
+
+/* Button Styles */
+.btn-small {
+  padding: 4px 8px;
+  font-size: 12px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--divider);
+  color: var(--text-primary);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-small:hover {
+  background: var(--bg-primary);
+  border-color: var(--accent-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .player-controls-container {
+    padding: 12px;
+    gap: 8px;
+  }
+  
+  .now-playing-section {
+    gap: 12px;
+  }
+  
+  .album-art-container {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .track-title {
+    font-size: 14px;
+  }
+  
+  .track-artist,
+  .track-album {
+    font-size: 12px;
+  }
+  
+  .playback-controls {
+    gap: 12px;
+  }
+  
+  .btn-control {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  .btn-play-pause {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+  
+  .volume-controls-section {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .additional-controls {
+    justify-content: center;
+  }
+  
+  .equalizer-controls {
+    height: 100px;
+    padding: 0 4px;
+  }
+  
+  .eq-slider {
+    height: 60px;
+  }
+  
+  .effect-controls {
+    grid-template-columns: 1fr;
+  }
+}
