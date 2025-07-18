@@ -11,7 +11,7 @@
     "build:mac": "electron-builder --mac",
     "build:linux": "electron-builder --linux",
     "build:all": "electron-builder --win --mac --linux",
-    "postinstall": "electron-builder install-app-deps"
+    "postinstall": "echo 'Skipping native deps rebuild in WebContainer'"
   },
   "author": "PulseBeats Team",
   "license": "MIT",
